@@ -1,3 +1,5 @@
+# SERVER EXPECTS: POST /
+# Data: [{"path": "some-path", "message": "some-message"}]
 try:
 	import simplejson as json
 except:
