@@ -37,8 +37,14 @@ def updates(updates):
 	else:
 		raise CorneliusError()
 
-def connect(uid, toWhat):
-	return update("::connect", uid + "->" + toWhat)
+def connect(uid, paths):
+	res = []
+	for p in paths:
+		res.append( ("::connect", uid + "->" + path) )
+	return updates(res)
 
-def disconnect(uid, fromWhat):
-	return update("::disconnect", uid + "->" + fromWhat)
+def disconnect(uid, paths):
+	res = []
+	for p in paths:
+		res.append( ("::disconnect", uid + "->" + path) )
+	return updates(res)
