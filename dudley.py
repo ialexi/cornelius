@@ -39,12 +39,12 @@ def updates(updates):
 
 def connect(uid, paths):
 	res = []
-	for p in paths:
+	for path in paths:
 		res.append( ("::connect", uid + "->" + path) )
 	return updates(res)
 
 def disconnect(uid, paths):
 	res = []
-	for p in paths:
+	for path in paths:
 		res.append( ("::disconnect", uid + "->" + path) )
 	return updates(res)
